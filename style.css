@@ -1,0 +1,15 @@
+header {
+  background-color: #cfc;
+  padding-top: 25px;
+  height: 150px;
+  text-align: center;
+}
+table {
+  display: inline;
+}
+@media screen and (max-device-width: 600px) {
+  header {
+    height: 100px;
+    padding-top: 5px;
+  }
+}
