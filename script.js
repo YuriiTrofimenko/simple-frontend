@@ -18,9 +18,9 @@ class Model {
 }
 
 class Customer extends Model {
-  constructor(id, fistName, lastName, age, address) {
+  constructor(id, firstName, lastName, age, address) {
     super(null)
-    this.fistName = fistName
+    this.firstName = firstName
     this.lastName = lastName
     this.setAge(age)
     this.address = address
@@ -72,7 +72,6 @@ function totalSum() {
 }
 
 const orderOneTotalSum = totalSum.bind(orders[0])
-console.log(orderOneTotalSum())
 
 orders.sort((o1, o2) => o2.price.replace('$', '') - o1.price.replace('$', '')).forEach(o => console.log(o))
 
@@ -81,12 +80,26 @@ const customersTableElement = document.getElementById('customersTable')
 const customersTableBodyElement = customersTableElement.children[1]
 customersTableBodyElement.innerHTML = ''
 customers.forEach(c => {
+  // создание объекта - узла-элементы tr
   const tr = document.createElement('tr')
+  // создание объекта - узла-элементы td для вывода идентификатора
   const idTd = document.createElement('td')
+  // ... и вставка в него дочернего узла - текста
   idTd.innerText = c.id
+  // то же самое - для имени
+  const nameTd = document.createElement('td')
+  nameTd.innerText = c.firstName
+  // то же самое - для фамилии
   const lastNameTd = document.createElement('td')
   lastNameTd.innerText = c.lastName
+  // то же самое - для возраста
+  const ageTd = document.createElement('td')
+  ageTd.innerText = c.age
+  // вставка всех элементов-ячеек в элемент-строку
   tr.append(idTd)
+  tr.append(nameTd)
   tr.append(lastNameTd)
+  tr.append(ageTd)
+  // вставка элемента-строки в элемент "тело таблицы"
   customersTableBodyElement.append(tr)
 })

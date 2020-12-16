@@ -4,8 +4,17 @@ header {
   height: 150px;
   text-align: center;
 }
-table {
-  display: inline;
+table, th, td {
+  border-style: solid;
+  border-collapse: collapse;
+  border-width: 1px;
+}
+.table {
+  display: inline-block;
+  margin-right: 50px;
+}
+.table > h2 {
+  display: inline-block;
 }
 @media screen and (max-device-width: 600px) {
   header {
