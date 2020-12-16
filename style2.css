@@ -1,0 +1,15 @@
+table, th, td {
+  border-style: solid;
+  border-collapse: collapse;
+  border-width: 1px;
+}
+th, td {
+  padding: 10px;
+}
+.my-table {
+  display: inline-block;
+  margin-right: 50px;
+}
+.my-table > h2 {
+  display: inline-block;
+}
